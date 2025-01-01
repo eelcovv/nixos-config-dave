@@ -118,7 +118,7 @@ in
   networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
   # Set your time zone.
-  time.timeZone = $timezone;
+  time.timeZone = "${timezone}";
 
 
   # Select internationalisation properties.
