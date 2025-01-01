@@ -17,6 +17,16 @@ else
   exit
 fi
 
+# get git user and email or set values based on username
+git_user=$(git config user.name)
+if [ -z $git_user ]; then
+  git_user=$(whoami) 
+fi
+git_email=$(git config user.email)
+if [ -z $git_email ]; then
+  git_email="${git_user}@example.org"
+fi
+
 echo "Default options are in brackets []"
 echo "Just press enter to select the default"
 sleep 2
@@ -36,32 +46,33 @@ fi
 echo "-----"
 
 backupname=$(date "+%Y-%m-%d-%H-%M-%S")
-if [ -d "zaneyos" ]; then
-  echo "ZaneyOS exists, backing up to .config/zaneyos-backups folder."
-  if [ -d ".config/zaneyos-backups" ]; then
-    echo "Moving current version of ZaneyOS to backups folder."
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+basename="daveos"
+if [ -d $basename ]; then
+  echo "DaveOS exists, backing up to .config/${basename}-backups folder."
+  if [ -d ".config/$basename-backups" ]; then
+    echo "Moving current version of DaveOS to backups folder."
+    mv "$HOME"/$basename .config/${basename}-backups/"$backupname"
     sleep 1
   else
     echo "Creating the backups folder & moving ZaneyOS to it."
-    mkdir -p .config/zaneyos-backups
-    mv "$HOME"/zaneyos .config/zaneyos-backups/"$backupname"
+    mkdir -p .config/${basename}-backups
+    mv "$HOME"/$basename .config/${basename}-backups/"$backupname"
     sleep 1
   fi
 else
-  echo "Thank you for choosing ZaneyOS."
+  echo "Thank you for choosing DaveOS."
   echo "I hope you find your time here enjoyable!"
 fi
 
 echo "-----"
 
-echo "Cloning & Entering ZaneyOS Repository"
-git clone https://gitlab.com/zaney/zaneyos.git
-cd zaneyos || exit
+echo "Cloning & Entering DaveOS Repository"
+git clone git@github.com:eelcovv/nixos-config-dave.git $basename
+cd $basename || exit
 mkdir hosts/"$hostName"
 cp hosts/default/*.nix hosts/"$hostName"
-git config --global user.name "installer"
-git config --global user.email "installer@gmail.com"
+git config --global user.name $git_user
+git config --global user.email $git_email
 git add .
 sed -i "/^\s*host[[:space:]]*=[[:space:]]*\"/s/\"\(.*\)\"/\"$hostName\"/" ./flake.nix
 
@@ -90,4 +101,4 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 
 echo "-----"
 
-sudo nixos-rebuild switch --flake ~/zaneyos/#${hostName}
+sudo nixos-rebuild switch --flake ~/$basename/#${hostName}

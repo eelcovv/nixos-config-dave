@@ -15,9 +15,9 @@
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     let
-      system = "aarch64-linux";
-      host = "nixbook";
-      username = "zaney";
+      system = "x86_64-linux";
+      host = "alloy";
+      username = "eelco";
     in
     {
       nixosConfigurations = {

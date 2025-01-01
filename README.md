@@ -1,16 +1,16 @@
 <div align="center">
 
-## ZaneyOS 🟰 Best ❄️ NixOS Configs
+## DaveOS 🟰 Best ❄️ NixOS Configs
 
-ZaneyOS is a simple way of reproducing my configuration on any NixOS system. This includes the wallpaper, scripts, applications, config files, and more.
+DaveOS is a simple way of reproducing my configuration on any NixOS system. This includes the wallpaper, scripts, applications, config files, and more.
 
-<img align="center" width="80%" src="https://gitlab.com/Zaney/zaneyos/-/raw/main/config/demo.png" />    
+<img align="center" width="80%" src="https://github.com/eelcovv/nixos-config-dave/-/raw/main/config/demo.png" />    
 
 **Inspiration for the Waybar config [here](https://github.com/justinlime/dotfiles).**
 
 </div>
 
-> **This project has a [Wiki](https://zaney.org/zaneyos-2.2/). Find out how to use ZaneyOS here!**
+> **This project is based on the set up by Zaney and has a [Wiki](https://zaney.org/zaneyos-2.2/). Find out how to use DaveOS here!**
 > **I have put a lot of effort into the [documentation](https://zaney.org/zaneyos-2.2/) so it should be accurate. However, please if you notice that something is wrong with it create an issue or reach out to me on Discord.**
 
 #### 🍖 Requirements
@@ -33,8 +33,8 @@ ZaneyOS is a simple way of reproducing my configuration on any NixOS system. Thi
 - Easy to understand file structure and simple, but encompassing, configuratiion.
 
 #### 👼 An Incredible Community Focused On Support
-- The entire idea of ZaneyOS is to make NixOS an approachable space that is actually a great community that you want to be in.
-- Many people who are patient and happy to spend their free time helping you are running ZaneyOS. Feel free to reach out on the Discord for any help with anything.
+- The entire idea of DaveOS is to make NixOS an approachable space that is actually a great community that you want to be in.
+- Many people who are patient and happy to spend their free time helping you are running DaveOS. Feel free to reach out on the Discord for any help with anything.
 
 <div align="center">
 
@@ -60,7 +60,7 @@ Simply copy this and run it:
 
 ```
 nix-shell -p git curl
-sh <(curl -L https://gitlab.com/Zaney/zaneyos/-/raw/main/install-zaneyos.sh)
+sh <(curl -L https://github.com/eelcovv/nixos-config-dave/-/raw/main/install-daveos.sh)
 ```
 
 #### 🦽 Manual:
@@ -74,8 +74,8 @@ nix-shell -p git vim
 Clone this repo & enter it:
 
 ```
-git clone https://gitlab.com/zaney/zaneyos.git
-cd zaneyos
+git clone https://github.com/eelcovv/nixos-config-dave.git ~/.config/daveos
+cd ~/.config/daveos
 ```
 
 - *You should stay in this folder for the rest of the install*
