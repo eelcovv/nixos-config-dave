@@ -54,7 +54,7 @@ if [ -d $basename ]; then
     mv "$HOME"/$basename .config/${basename}-backups/"$backupname"
     sleep 1
   else
-    echo "Creating the backups folder & moving ZaneyOS to it."
+    echo "Creating the backups folder & moving DaveOS to it."
     mkdir -p .config/${basename}-backups
     mv "$HOME"/$basename .config/${basename}-backups/"$backupname"
     sleep 1
