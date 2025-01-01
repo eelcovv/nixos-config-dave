@@ -183,8 +183,8 @@ in
       '';
       shellAliases = {
         sv = "sudo nvim";
-        fr = "nh os switch --hostname ${host} /home/${username}/zaneyos";
-        fu = "nh os switch --hostname ${host} --update /home/${username}/zaneyos";
+        fr = "nh os switch --hostname ${host} /home/${username}/daveos";
+        fu = "nh os switch --hostname ${host} --update /home/${username}/daveos";
         zu = "sh <(curl -L https://raw.githubusercontent.com/eelcovv/nixos-config-dave/refs/heads/main/install-daveos.sh)";
         ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
         v = "nvim";
@@ -207,7 +207,7 @@ in
         };
         background = [
           {
-            path = "/home/${username}/Pictures/Wallpapers/zaney-wallpaper.jpg";
+            path = "/home/${username}/Pictures/Wallpapers/nix-wallpaper-stripes-logo.png";
             blur_passes = 3;
             blur_size = 8;
           }

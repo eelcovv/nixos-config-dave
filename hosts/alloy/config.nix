@@ -308,8 +308,8 @@ in
   };
 
   environment.variables = {
-    ZANEYOS_VERSION = "2.2";
-    ZANEYOS = "true";
+    DAVEOS_VERSION = "0.1";
+    DAVEOS = "true";
   };
 
   # Extra Portal Configuration
