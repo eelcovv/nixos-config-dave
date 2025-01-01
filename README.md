@@ -63,7 +63,7 @@ nix-shell -p git curl
 Then, simply copy this and run it:
 
 ```
-sh <(curl -L https://github.com/eelcovv/nixos-config-dave/blob/main/install-daveos.sh)
+sh <(curl -L https://raw.githubusercontent.com/eelcovv/nixos-config-dave/refs/heads/main/install-daveos.sh)
 ```
 
 #### 🦽 Manual:
