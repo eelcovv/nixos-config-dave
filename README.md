@@ -56,10 +56,13 @@ Please do yourself a favor and [read the wiki](https://zaney.org/zaneyos-2.2/).
 
 This is the easiest and recommended way of starting out. The script is not meant to allow you to change every option that you can in the flake or help you install extra packages. It is simply here so you can get my configuration installed with as little chances of breakages and then fiddle to your hearts content!
 
-Simply copy this and run it:
-
+First make sure you have git and curl installed with 
 ```
 nix-shell -p git curl
+```
+Then, simply copy this and run it:
+
+```
 sh <(curl -L https://github.com/eelcovv/nixos-config-dave/-/raw/main/install-daveos.sh)
 ```
 
